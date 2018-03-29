@@ -17,19 +17,28 @@ export default class SCORM
 		/** @private */ this._version = version
 		/** @private */ this._depth = 10
 		/** @private */ this._api = null
-		
-		/**
-		 * @member {Boolean} 
-		 */
-		this.connected = false
+		/** @private */ this._connected = false
 	}
-	
+
 	/**
-	 * @member {String} The selected version of the SCORM API
+	 * The selected version of the SCORM API
+	 * 
+	 * @member {String} version
 	 */
 	get version()
 	{
 		return this._version
+	}
+
+	/**
+	 * The status of the connection
+	 * `true` if connected to the SCORM API, `false` otherwise
+	 * 
+	 * @member {Boolean} connected
+	 */
+	get connected()
+	{
+		return this._connected
 	}
 	
 	/**
@@ -94,7 +103,7 @@ export default class SCORM
 	 */
 	initialize()
 	{
-		if (this.connected)
+		if (this._connected)
 		{
 			console.log('SCORM API already connected')
 			return
@@ -116,13 +125,13 @@ export default class SCORM
 			const connectionErrorCode = this.lastErrorCode()
 			if (!connectionErrorCode)
 			{
-				this.connected = false
+				this._connected = false
 				console.warn('SCORM API Failed to connect! Error:', this.errorString(connectionErrorCode))
 				return
 			}
 		}
 		
-		this.connected = true
+		this._connected = true
 		
 		if (true) /* Check post-initialize */
 		{
@@ -140,7 +149,7 @@ export default class SCORM
 	 */
 	terminate()
 	{
-		if (!this.connected)
+		if (!this._connected)
 		{
 			return this.notConnected()
 		}
@@ -167,7 +176,7 @@ export default class SCORM
 			return
 		}
 		
-		this.connected = false
+		this._connected = false
 	}
 	
 	/**
@@ -180,7 +189,7 @@ export default class SCORM
 	 */
 	status(status)
 	{
-		if (!this.connected)
+		if (!this._connected)
 		{
 			return this.notConnected()
 		}
@@ -202,7 +211,7 @@ export default class SCORM
 	 */
 	get(key)
 	{
-		if (!this.connected)
+		if (!this._connected)
 		{
 			return this.notConnected()
 		}
@@ -218,7 +227,7 @@ export default class SCORM
 	 */
 	set(key, value)
 	{
-		if (!this.connected)
+		if (!this._connected)
 		{
 			return this.notConnected()
 		}
@@ -231,7 +240,7 @@ export default class SCORM
 	 */
 	save()
 	{
-		if (!this.connected)
+		if (!this._connected)
 		{
 			return this.notConnected()
 		}
@@ -246,7 +255,7 @@ export default class SCORM
 	 */
 	lastErrorCode()
 	{
-		if (!this.connected)
+		if (!this._connected)
 		{
 			return this.notConnected()
 		}
@@ -261,7 +270,7 @@ export default class SCORM
 	 */
 	errorString(code)
 	{
-		if (!this.connected)
+		if (!this._connected)
 		{
 			return this.notConnected()
 		}
