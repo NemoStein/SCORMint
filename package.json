@@ -1,0 +1,18 @@
+{
+  "name": "scow",
+  "version": "0.1.0",
+  "description": "A SCORM 1.2 & 2004 API wrapper",
+  "main": "index.js",
+  "keywords": [
+    "SCORM",
+    "SCORM1.2",
+    "SCORM2004",
+    "LMS",
+    "SCO"
+  ],
+  "author": "NemoStein <contato@nemostein.com.br> (https://nemostein.com.br)",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ]
+}
