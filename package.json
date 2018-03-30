@@ -10,6 +10,7 @@
     "LMS",
     "SCO"
   ],
+  "repository": "nemostein/scormint",
   "author": "NemoStein <contato@nemostein.com.br> (https://nemostein.com.br)",
   "license": "MIT",
   "files": [
