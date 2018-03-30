@@ -39,6 +39,8 @@ scorm.save();
 * [errorString(code)](#errorstringcode) - Gets the text representation of the error code
 * [version](#version) - The selected version of the SCORM API
 * [connected](#connected) - The status of the connection
+* [updateStatusAfterInitialize](#updatestatusafterinitialize) - Update lesson/completion status after initialization
+* [updateStatusBeforeTerminate](#updatestatusbeforeterminate) - Update exit status before terminate
 * [SCORM.VERSION_1_2](#scormversion_1_2) - Constant defining API version 1.2
 * [SCORM.VERSION_2004](#scormversion_2004) - Constant defining API version 2004
 
