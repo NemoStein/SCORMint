@@ -1,6 +1,6 @@
 {
   "name": "scormint",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A SCORM 1.2 & 2004 API wrapper",
   "main": "index.js",
   "keywords": [
