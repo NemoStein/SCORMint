@@ -14,6 +14,20 @@ export default class SCORM
 			throw new Error(`Invalid version ${version}. Expected: [${SCORM.VERSION_1_2}, ${SCORM.VERSION_2004}]`)
 		}
 		
+		/**
+		 * Determines if the lesson/completion status should be changed from 'not attempted' to 'incomplete' after initialization
+		 * 
+		 * @member {Boolean} updateStatusAfterInitialize
+		 */
+		this.updateStatusAfterInitialize = true
+		
+		/**
+		 * Determines if the exit status should be set as 'suspend' or 'logout' (depending on lesson/completion status) before terminate
+		 * 
+		 * @member {Boolean} updateStatusBeforeTerminate
+		 */
+		this.updateStatusBeforeTerminate = true
+		
 		/** @private */ this._version = version
 		/** @private */ this._depth = 10
 		/** @private */ this._api = null
@@ -133,7 +147,7 @@ export default class SCORM
 		
 		this._connected = true
 		
-		if (true) /* Check post-initialize */
+		if (this.updateStatusAfterInitialize)
 		{
 			const completion = this.status()
 			if (!completion || completion === 'not attempted' || completion === 'unknown')
@@ -154,7 +168,7 @@ export default class SCORM
 			return this.notConnected()
 		}
 		
-		if (true) /* Check pre-terminate */
+		if (this.updateStatusBeforeTerminate)
 		{
 			const completion = this.status()
 			if (completion !== 'completed' && completion !== 'passed')
