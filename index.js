@@ -316,5 +316,3 @@ export default class SCORM
 
 SCORM.VERSION_1_2 = '1.2'
 SCORM.VERSION_2004 = '2004'
-
-module.exports = SCORM
