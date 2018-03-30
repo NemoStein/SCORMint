@@ -80,12 +80,12 @@ export default class SCORM
 		{
 			if (window.API)
 			{
-				this.version = SCORM.VERSION_1_2
+				this._version = SCORM.VERSION_1_2
 				this._api = window.API
 			}
 			else if (window.API_1484_11)
 			{
-				this.version = SCORM.VERSION_2004
+				this._version = SCORM.VERSION_2004
 				this._api = window.API_1484_11
 			}
 			
@@ -172,7 +172,7 @@ export default class SCORM
 		const success = (this.isV1() ? this._api.LMSFinish('') : this._api.Terminate(''))
 		if (!success)
 		{
-			console.warn('SCORM API Failed to connect! Error:', this.errorString())
+			console.warn('SCORM API Failed to connect! Error:', this.errorString(this.lastErrorCode()))
 			return
 		}
 		
