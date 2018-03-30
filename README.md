@@ -120,6 +120,16 @@ The selected version of the SCORM API
 The status of the connection
 `true` if connected to the SCORM API, `false` otherwise
 
+### updateStatusAfterInitialize
+
+Determines if the lesson/completion status should be changed from 'not attempted' to 'incomplete' after initialization
+Defaults to `true`
+
+### updateStatusBeforeTerminate
+
+Determines if the exit status should be set as 'suspend' or 'logout' (depending on lesson/completion status) before terminate
+Defaults to `true`
+
 ### SCORM.VERSION_1_2
 1.2
 
