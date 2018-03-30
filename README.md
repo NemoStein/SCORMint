@@ -35,12 +35,12 @@ scorm.save();
 * [get(key)](#getkey) - Gets a field from the API
 * [set(key, value)](#getkey-value) - Sets a field from the API
 * [save()](#save) - Persists/Commits the changes in the API
-* [lastErrorCode()](#lastErrorCode) - Gets the last error reported by the API
-* [errorString()](#errorString) - Gets the text representation of the error code
+* [lastErrorCode()](#lasterrorcode) - Gets the last error reported by the API
+* [errorString(code)](#errorstringcode) - Gets the text representation of the error code
 * [version](#version) - The selected version of the SCORM API
 * [connected](#connected) - The status of the connection
-* [SCORM.VERSION_1_2](#SCORMVERSION_1_2)
-* [SCORM.VERSION_2004](#SCORMVERSION_2004)
+* [SCORM.VERSION_1_2](#scormversion_1_2) - Constant defining API version 1.2
+* [SCORM.VERSION_2004](#scormversion_2004) - Constant defining API version 2004
 
 ### constructor(version)
 
