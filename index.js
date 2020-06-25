@@ -301,7 +301,7 @@ export default class SCORM
 	 */
 	isV1()
 	{
-		return this.isV1()
+		return this.version == SCORM.VERSION_1_2
 	}
 
 	/**
@@ -313,7 +313,7 @@ export default class SCORM
 	 */
 	isV2()
 	{
-		return this.isV2()
+		return this.version == SCORM.VERSION_2004
 	}
 	
 	/**
