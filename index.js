@@ -134,15 +134,9 @@ export default class SCORM
 		}
 		
 		const connected = (this.isV1() ? this._api.LMSInitialize('') : this._api.Initialize(''))
-		if (connected)
+		if (!connected)
 		{
-			const connectionErrorCode = this.lastErrorCode()
-			if (!connectionErrorCode)
-			{
-				this._connected = false
-				console.warn('SCORM API Failed to connect! Error:', this.errorString(connectionErrorCode))
-				return
-			}
+			console.warn("Could not connect to SCORM API")
 		}
 		
 		this._connected = true
