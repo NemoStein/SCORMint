@@ -10,8 +10,8 @@
     "LMS",
     "SCO"
   ],
-  "repository": "nemostein/scormint",
-  "author": "NemoStein <contato@nemostein.com.br> (https://nemostein.com.br)",
+  "repository": "https://github.com/nemostein/scormint",
+  "author": "NemoStein <contato@nemostein.com.br> (http://nemostein.com.br)",
   "license": "MIT",
   "files": [
     "index.js"
